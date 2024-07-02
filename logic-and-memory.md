@@ -209,3 +209,103 @@ In this example, we learned how to simplify code logic by:
     3. Refactoring code to make it more concise and readable
 
 Simplifying your code not only makes it easier to read and maintain but also helps in identifying potential errors and improving performance.
+
+
+
+# Intro to Binary
+
+* Understanding Numerical Bases
+Numerical bases define how many digits are used in a numbering system. The base determines the range of digits and how numbers are incremented
+
+* Base-10: Decimal
+    • Commonly used in everyday life
+    • Digits 0-9
+    • Once you reach 9, the next digit increments to form 10, 11, etc.
+
+    Example:
+    ```js
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 23, ...
+    ```
+
+* Base-2: Binary
+    • Used in computers
+    • Digits: 0 and 1 (binary digits or bits)
+    • After 1, the next digit increments like so: 10 (binary for 2), 11 (binary for 3), etc.
+
+    Example:
+    ```js
+    0000 (0), 0001 (1), 0010 (2), 0011 (3), 0100 (4), 0101 (5), 0110 (6), 0111 (7), 1000 (8), ...
+    ```
+    To distinguis binary from decimal, prefix with `0b`:`0b1000` (binary for 8)
+
+* Translating Binary to Decimal
+To convert binary to decimal, multiply each bit by 2 raised to its position power (starting from 0 on the right) and sum the results.
+
+Example:
+Convert `0b11001010` to decimal:
+```js
+2^0 * 0 = 0
+2^1 * 1 = 2
+2^2 * 0 = 0
+2^3 * 1 = 8
+2^4 * 0 = 0
+2^5 * 0 = 0
+2^6 * 1 = 64
+2^7 * 1 = 128
+sum = 0 + 2 + 0 + 8 + 0 + 0 + 64 + 128 = 202
+```
+Thus, `ob11001010` is `202` in decimal
+
+* Base-16: Hexadecimal
+    • Digits: 0-9 and A-F (where A=10, B=11, C=12, D=13, E=14, F=15)
+    • Often used as shorthand for binary
+    • One hex digit represents four binary bits
+
+    Example:
+    ```js
+    0 = 0b0000 = 0x0
+    1 = 0b0001 = 0x1
+    2 = 0b0010 = 0x2
+    ...
+    A = 0b1010 = 0xA
+    B = 0b1011 = 0xB
+    C = 0b1100 = 0xC
+    D = 0b1101 = 0xD
+    E = 0b1110 = 0xE
+    F = 0b1111 = 0xF
+    ```
+    To distinguis hexadecimal from decimal, prefix with `0x`:`0xF23C`
+
+    Example:
+    Convert `0xF23C` to decimal:
+    ```js
+    16^0 * C = 1 * 12 = 12
+    16^1 * 3 = 16 * 3 = 48
+    16^2 * 2 = 256 * 2 = 512
+    16^3 * F = 4096 * 15 = 61440
+    Sum = 12 + 48 + 512 + 61440 = 62012
+    ```
+    Thus, `0xF23C` is `62012` in decimal
+
+* Bytes and Memory
+    • Byte: 8 bits
+    • Kilobyte (KB): 1000 bytes
+    • Megabyte (MB): 1 million bytes
+    • Gigabyte (GB): 1 billion bytes
+    • Terabyte (TB): 1 trillion bytes
+
+Mnemonic for Memory Sizes:
+"Kissing Mel Gibson, Teddy Pendergrass exclaimed, zesty, yo!"
+
+
+* Representing Letters in Binary
+Characters are represented using standard encodings like ASCII, where each character is mapped to a binary value
+
+Example:
+ASCII value for `A` = `10000001`
+
+* Summary:
+    • Base-10 (Decimal): Everyday counting (0-9)
+    • Base-2 (Binary): Used in computing (0,1)
+    • Base-16 (Hexadecimal): Efficient shorthand for binary (0-9, A-F)
+    • Memory Representation: Binary used to represent all data types, including text and larger numerical bases for efficiency
